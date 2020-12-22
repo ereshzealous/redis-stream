@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 @Service
 @Slf4j
-public class PurchaseEventProducer {
+public class MovieEventPublisher {
 
 	private AtomicInteger atomicInteger = new AtomicInteger(0);
 
@@ -31,8 +31,8 @@ public class PurchaseEventProducer {
 
 	private final ReactiveRedisTemplate<String, String> redisTemplate;
 
-	public PurchaseEventProducer(MovieRepository repository,
-	                             ReactiveRedisTemplate<String, String> redisTemplate) {
+	public MovieEventPublisher(MovieRepository repository,
+	                           ReactiveRedisTemplate<String, String> redisTemplate) {
 		this.movieRepository = repository;
 		this.redisTemplate = redisTemplate;
 	}
