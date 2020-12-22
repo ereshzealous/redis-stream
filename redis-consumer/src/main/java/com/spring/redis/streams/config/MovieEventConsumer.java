@@ -55,9 +55,7 @@ public class MovieEventConsumer implements StreamListener<String, ObjectRecord<S
 
 	@Scheduled(fixedRate = 10000)
 	public void showPublishedEventsSoFar(){
-		System.out.println(
-				"Total Consumed :: " + atomicInteger.get()
-		);
+		log.info("Total Consumer :: " + atomicInteger.get());
 	}
 
 }
