@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 @Service
 @Slf4j
-public class PurchaseEventConsumer implements StreamListener<String, ObjectRecord<String, MovieDetails>> {
+public class MovieEventConsumer implements StreamListener<String, ObjectRecord<String, MovieDetails>> {
 
 	private AtomicInteger atomicInteger = new AtomicInteger(0);
 
