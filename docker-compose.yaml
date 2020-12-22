@@ -19,7 +19,7 @@ services:
       - redis
     environment:
       - SPRING_REDIS_HOST=redis
-      - PUBLISH_RATE=10000
+      - PUBLISH_RATE=2000
   consumer:
     build: ./redis-consumer
     image: eresh.gorantla/redis-consumer
