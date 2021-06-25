@@ -1,6 +1,7 @@
 package com.spring.redis.streams.config;
 
 import com.spring.redis.streams.dto.MovieDetails;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,12 +20,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class MovieEventConsumer implements StreamListener<String, ObjectRecord<String, MovieDetails>> {
 
 	private AtomicInteger atomicInteger = new AtomicInteger(0);
 
-	@Autowired
-	private ReactiveRedisTemplate<String, String> redisTemplate;
+	private final ReactiveRedisTemplate<String, String> redisTemplate;
 
 	@Override
 	@SneakyThrows
